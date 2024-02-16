@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard';
 export default function HomeView() {
   
   let { data, isLoading } = useGetProductsQuery()
-  
+
   return (
     <div className='p-28'>
     <h1 className='text-3xl underline uppercase'>All our products</h1>

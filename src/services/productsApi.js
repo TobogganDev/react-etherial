@@ -24,4 +24,4 @@ export const productsApi = createApi({
   }),
 })
 
-export const { useGetProductsQuery, useGetProductCommentsQuery, usePostProductCommentMutation } = productsApi
+export const { useGetProductsQuery, useGetCommentsQuery, useCreateCommentMutation } = productsApi
