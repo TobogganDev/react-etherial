@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../context/CartContext'
 
 export default function ProductCard({ product }) {
+
+  const { addToCart } = useContext(CartContext)
+
+  const handleAddToCart = () => {
+    addToCart(product)
+  }
 
   return (
     <div className='flex flex-col gap-4 bg-white/30 rounded-lg overflow-hidden'>
@@ -13,7 +20,7 @@ export default function ProductCard({ product }) {
         </div>
         <div className='flex gap-2 mt-4'>
           <a href={`/product/${product.id}`} className='rounded-lg w-full py-2 px-2 bg-blue-600 text-white'>View product</a>
-          <button className='rounded-lg w-full py-2 bg-green-600 text-white'>Add to cart</button>
+          <button onClick={handleAddToCart} className='rounded-lg w-full py-2 bg-green-600 text-white'>Add to cart</button>
         </div>
       </div>
     </div>

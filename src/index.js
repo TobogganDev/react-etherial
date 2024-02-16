@@ -12,6 +12,7 @@ import ProductView from './pages/ProductView';
 import ErrorView from './pages/ErrorView';
 import Header from './components/layouts/Header';
 import { Provider } from 'react-redux';
+import CartProvider from './context/CartProvider';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +34,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Header />
-      <RouterProvider router={router} />
+      <CartProvider>
+        <Header />
+        <RouterProvider router={router} />
+      </CartProvider>
     </Provider>
   </React.StrictMode>
 );
